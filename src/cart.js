@@ -30,5 +30,5 @@ export function renderCart(target) {
   target.innerHTML = cart
     .map((item) => `<li>${item.title} x ${item.quantity}</li>`)
     .join("");
-  console.log("rendered", cartCount);
+  console.log("cart updated", cartCount);
 }
