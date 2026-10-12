@@ -1,9 +1,8 @@
-import { formatPrice, formatCurrency } from "./format.js";
-
+import { formatPrice } from "./format.js";
 const cart = [];
 
 export function addToCart(product, quantity) {
-  let existing = cart.find((item) => item.id == product.id);
+  let existing = cart.find((item) => item.id === product.id);
   if (existing) {
     existing.quantity += quantity;
   } else {
@@ -19,7 +18,6 @@ export function addToCart(product, quantity) {
 
 export function cartTotal() {
   let total = 0;
-  const discount = 0.1;
   for (const item of cart) {
     total += item.price * item.quantity;
   }
@@ -30,5 +28,5 @@ export function renderCart(target) {
   target.innerHTML = cart
     .map((item) => `<li>${item.title} x ${item.quantity}</li>`)
     .join("");
-  console.log("cart updated", cartCount);
+  console.log("cart updated", cart.length);
 }
