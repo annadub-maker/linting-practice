@@ -3,7 +3,7 @@ import { formatPrice, formatCurrency } from "./format.js";
 const cart = [];
 
 export function addToCart(product, quantity) {
-  var existing = cart.find((item) => item.id == product.id);
+  let existing = cart.find((item) => item.id == product.id);
   if (existing) {
     existing.quantity += quantity;
   } else {
